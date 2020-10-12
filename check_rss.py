@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
 '''
 check_rss - A simple Nagios plugin to check an RSS feed.
