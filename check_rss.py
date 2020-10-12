@@ -148,11 +148,11 @@ def main(argv=None):
 
     # We will form our response here based on the verbosity levels. This makes the logic below a lot easier.
     if (args.verbosity == '0'):
-        output = 'Posted %s hrs ago ; %s' % (hourssinceposted, title)
+        output = 'Posted %s hrs ago ; %s' % (hourssinceposted, title.encode('utf-8'))
     elif (args.verbosity == '1'):
-        output = 'Posted %s hrs ago ; Title: %s; Link: %s' % (hourssinceposted, title, link)
+        output = 'Posted %s hrs ago ; Title: %s; Link: %s' % (hourssinceposted, title.encode('utf-8'), link)
     elif (args.verbosity == '2'):
-        output = 'Posted %s hrs ago ; Title: %s ; Description: %s ; Link: %s' % (hourssinceposted, title, description, link)
+        output = 'Posted %s hrs ago ; Title: %s ; Description: %s ; Link: %s' % (hourssinceposted, title.encode('utf-8'), description, link)
 
     # Check for strings that match, resulting in critical status
     if (args.criticalif):
