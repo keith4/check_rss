@@ -34,7 +34,10 @@ import feedparser
 import argparse
 import sys
 import datetime
+import codecs
 
+sys.stdout = codecs.getwriter('utf8')(sys.stdout)
+sys.stderr = codecs.getwriter('utf8')(sys.stderr)
 
 def fetch_feed_last_entry(feed_url):
     '''Fetch a feed from a given string'''
@@ -135,7 +138,7 @@ def main(argv=None):
     # we have everything we need, let's start 
     last_entry = fetch_feed_last_entry(rssfeed)
     feeddate = last_entry['updated_parsed']
-    title = last_entry['title'].encode('utf-8')
+    title = last_entry['title']
     description = last_entry['description']
     link = last_entry['link']
 
